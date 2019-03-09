@@ -10,6 +10,10 @@ AWS-SDK looks for configuration on `process.env`. Configure per [those docs](htt
 
 ## Usage
 
+```
+npm install @ryanburnette/aws-s3-json-cache
+```
+
 ```javascript
 var Cache = require('@ryanburnette/aws-s3-json-cache');
 
