@@ -1,0 +1,23 @@
+{
+  "name": "@ryanburnette/aws-s3-json-cache",
+  "version": "1.0.0",
+  "description": "@ryanburnette/aws-s3-json-cache",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanburnette/aws-s3-json-cache.git"
+  },
+  "author": "Ryan Burnette <ryan.burnette@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanburnette/aws-s3-json-cache/issues"
+  },
+  "homepage": "https://github.com/ryanburnette/aws-s3-json-cache#readme",
+  "dependencies": {
+    "aws-sdk": "^2.418.0"
+  },
+  "devDependencies": {
+    "dotenv": "^6.2.0",
+    "nodemon": "^1.18.10"
+  }
+}
