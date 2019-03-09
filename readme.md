@@ -1,6 +1,6 @@
 # @ryanburnette/aws-s3-json-cache
 
-## Descriptions
+## Description
 
 A basic JavaScript object cache for S3.
 
