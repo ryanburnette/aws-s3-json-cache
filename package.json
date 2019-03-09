@@ -1,7 +1,7 @@
 {
   "name": "@ryanburnette/aws-s3-json-cache",
   "version": "1.0.0",
-  "description": "@ryanburnette/aws-s3-json-cache",
+  "description": "A basic JavaScript object cache for S3.",
   "main": "index.js",
   "repository": {
     "type": "git",
