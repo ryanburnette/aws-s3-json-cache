@@ -1,6 +1,6 @@
 {
   "name": "@ryanburnette/aws-s3-json-cache",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A basic JavaScript object cache for S3.",
   "main": "index.js",
   "repository": {
@@ -15,9 +15,5 @@
   "homepage": "https://github.com/ryanburnette/aws-s3-json-cache#readme",
   "dependencies": {
     "aws-sdk": "^2.418.0"
-  },
-  "devDependencies": {
-    "dotenv": "^6.2.0",
-    "nodemon": "^1.18.10"
   }
 }

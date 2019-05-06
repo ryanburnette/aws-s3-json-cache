@@ -1,4 +1,4 @@
-# @ryanburnette/aws-s3-json-cache
+# [@ryanburnette](https://ryanburnette.com)/[aws-s3-json-cache](https://www.npmjs.com/package/@ryanburnette/aws-s3-json-cache)
 
 ## Description
 
