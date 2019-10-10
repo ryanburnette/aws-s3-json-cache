@@ -5,14 +5,10 @@
 
 A JavaScript object cache on AWS S3.
 
-## Usage
-
-```
-npm install @ryanburnette/aws-s3-json-cache
-```
-
 AWS-SDK looks for configuration on in the environment. Configure per [AWS SDK
 documentation][2].
+
+## Usage
 
 ```js
 var cache = require('@ryanburnette/aws-s3-json-cache')({
