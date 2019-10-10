@@ -1,42 +1,48 @@
 'use strict';
 
-const AWS = require('aws-sdk');
-const S3 = new AWS.S3({apiVersion:'2006-03-01'});
+var AWS = require('aws-sdk');
+var S3 = new AWS.S3({ apiVersion: '2006-03-01' });
 
-module.exports = function (opts={}) {
-  let obj = {};
+module.exports = function(opts) {
+  if (!opts) {
+    opts = {};
+  }
 
-  if (!opts.bucket) throw new Error('opts.bucket required');
+  var Bucket = opts.bucket;
 
-  obj.get = function (id) {
-    if (!id) throw new Error('id required');
+  var obj = {};
 
+  obj.get = function(Key) {
     return S3.getObject({
-      Bucket: opts.bucket,
-      Key: id,
-    }).promise()
-      .then(data => data.Body)
-      .then(data => data.toString('utf8'))
-      .then(str => JSON.parse(str));
+      Bucket,
+      Key
+    })
+      .promise()
+      .then(function(data) {
+        return JSON.parse(data.Body.toString('utf8'));
+      });
   };
 
-  obj.put = function (id,obj) {
-    if (!id) throw new Error('id required');
-    if (!obj) throw new Error('obj required');
-
+  obj.put = function(Key, Body) {
+    Body = JSON.stringify(Body);
     return S3.putObject({
-      Bucket: opts.bucket,
-      Key: id,
-      Body: JSON.stringify(obj)
+      Bucket,
+      Key,
+      Body
     }).promise();
   };
 
-  obj.list = function () {
+  obj.list = function() {
     return S3.listObjects({
-      Bucket: opts.bucket,
+      Bucket,
       MaxKeys: 1000
-    }).promise()
-      .then(res => res.Contents.map(el => el.Key));
+    })
+      .promise()
+      .then(function(res) {
+        return res.Contents.map(function(el) {
+          return el.Key;
+        });
+      });
   };
 
   return obj;

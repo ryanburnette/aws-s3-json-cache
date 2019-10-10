@@ -1,7 +1,7 @@
 {
   "name": "@ryanburnette/aws-s3-json-cache",
-  "version": "1.0.1",
-  "description": "A basic JavaScript object cache for S3.",
+  "version": "2.0.0",
+  "description": "A JavaScript object cache on AWS S3.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -9,11 +9,7 @@
   },
   "author": "Ryan Burnette <ryan.burnette@gmail.com>",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ryanburnette/aws-s3-json-cache/issues"
-  },
-  "homepage": "https://github.com/ryanburnette/aws-s3-json-cache#readme",
   "dependencies": {
-    "aws-sdk": "^2.418.0"
+    "aws-sdk": "^2.547.0"
   }
 }

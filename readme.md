@@ -1,12 +1,9 @@
-# [@ryanburnette](https://ryanburnette.com)/[aws-s3-json-cache](https://www.npmjs.com/package/@ryanburnette/aws-s3-json-cache)
+# [aws-s3-json-cache][1]
 
-## Description
+[![repo](https://img.shields.io/badge/repository-Github-black.svg?style=flat-square)](https://github.com/ryanburnette/aws-s3-json-cache)
+[![npm](https://img.shields.io/badge/package-NPM-green.svg?style=flat-square)](https://www.npmjs.com/package/@ryanburnette/aws-s3-json-cache)
 
-A basic JavaScript object cache for S3.
-
-## Configuration
-
-AWS-SDK looks for configuration on `process.env`. Configure per [those docs](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/loading-node-credentials-environment.html).
+A JavaScript object cache on AWS S3.
 
 ## Usage
 
@@ -14,28 +11,34 @@ AWS-SDK looks for configuration on `process.env`. Configure per [those docs](htt
 npm install @ryanburnette/aws-s3-json-cache
 ```
 
-```javascript
-var Cache = require('@ryanburnette/aws-s3-json-cache');
+AWS-SDK looks for configuration on in the environment. Configure per [AWS SDK
+documentation][2].
 
-var cache = new Cache({
-  bucket:'my-bucket'
+```js
+var cache = require('@ryanburnette/aws-s3-json-cache')({
+  bucket: 'my-bucket'
 });
 
-var obj = {foo:'foo',bar:'bar'};
-
-cache.put('obj',obj)
-  .then(res => console.log(res));
+cache.put('obj', { foo: 'foo', bar: 'bar' }).then(function(r) {
+  console.log(r);
+});
 // => { ETag: '"baa4abdb95dba99d1946dfb15b3c1ce8"' }
 
-cache.get('obj')
-  .then(obj => console.log(obj));
+cache.get('obj').then(function(obj) {
+  console.log(obj);
+});
 // => { foo: 'foo', bar: 'bar' }
 
-cache.list()
-  .then(ids => console.log(ids));
-// => [ 'bar', 'baz', 'foo' ]
+cache.list().then(function(ids) {
+  console.log(ids);
+});
+// => [ 'obj' ]
 ```
 
-## TODO
+## Limitations
 
-- Get back more than 1000 keys when using `#list()`
+- List gets up to 1000 keys.
+
+[1]: https://github.com/ryanburnette/aws-s3-json-cache
+[2]:
+  https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/loading-node-credentials-environment.html
